@@ -5,6 +5,20 @@
     <div class="card-header">
        Configurateur
     </div>
+    <% if (mode == 0) { %>
+        <form action="/configurateur/nbr" method="post" name="form_nbr">
+            <div class="form-group">
+                <label for="Nbr">Nombre d'equipement</label>
+                <input type="number" name="nbrequipment" class="form-control" id="nbrequipment">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Valider">
+        </form>
+    <% } %>
+    <% if (mode == 1) { %>
+        <p>voila le num : <%= nbrequipment %></p>
+    <% } %>
+        
+
 </div>
 
 <%- include('partials/footer'); %>
