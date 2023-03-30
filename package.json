@@ -1,0 +1,17 @@
+{
+  "name": "networkadmin",
+  "version": "0.0.0",
+  "description": "network equipment network config file generator",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Dimitri Lepoutre",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "electron": "^23.2.1",
+    "electron-forge": "^5.2.4",
+    "express": "^4.18.2"
+  }
+}
