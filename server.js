@@ -18,6 +18,7 @@ var indexRouter = require('./routes/index');
 var docRouter = require('./routes/documentation');
 var confRouter = require('./routes/configurateur');
 
+app.use(express.static('public'));
 app.use('/', indexRouter);
 app.use('/documentation', docRouter);
 app.use('/configurateur', confRouter);

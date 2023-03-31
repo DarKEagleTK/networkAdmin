@@ -15,7 +15,20 @@
         </form>
     <% } %>
     <% if (mode == 1) { %>
-        <p>voila le num : <%= nbrequipment %></p>
+        <form action="/configurateur/config" method="post">
+            <% for (let index = 0; index <= nbrequipment; index++) { %>
+                <div class="form-group">
+                    <label for="nbr">Equipment <%= index %></label>
+                    <select name="nom-equipment" id="equipement-select">
+                        <option value="">--Please choose an Option--</option>
+                        <option value="c3725">c3725</option>
+                        <option value="2760">c2760</option>
+                    </select>
+                </div>
+            <% } %>
+
+            <input type="submit" class="btn btn-primary" value="Valider">
+        </form>
     <% } %>
         
 
