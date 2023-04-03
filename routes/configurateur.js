@@ -13,4 +13,9 @@ router.post('/nbr', (req, res, next) => {
     res.render('configurateur', {mode: mode, nbrequipment: nombre_equipment});
 })
 
+router.post('/config', (req, res, next) => {
+    const mode = 2;
+    res.render('configurateur', {mode: mode})
+}) 
+
 module.exports = router;

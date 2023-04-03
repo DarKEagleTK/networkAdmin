@@ -1,34 +1,51 @@
 <%- include('partials/head'); %>
 <%- include('partials/header'); %>
 
-<div class="card">
-    <div class="card-header">
-       Configurateur
+<div>
+    <div>
+        <h1>Configurateur</h1>
     </div>
     <% if (mode == 0) { %>
         <form action="/configurateur/nbr" method="post" name="form_nbr">
             <div class="form-group">
-                <label for="Nbr">Nombre d'equipement</label>
-                <input type="number" name="nbrequipment" class="form-control" id="nbrequipment">
+                <div class="card">
+                    <div class="card-header">
+                        <label for="Nbr">Nombre d'equipement</label>
+                    </div>
+                    <input type="number" name="nbrequipment" class="form-control" id="nbrequipment">
+                </div>
             </div>
             <input type="submit" class="btn btn-primary" value="Valider">
         </form>
     <% } %>
     <% if (mode == 1) { %>
         <form action="/configurateur/config" method="post">
-            <% for (let index = 0; index <= nbrequipment; index++) { %>
+            <% for (let index = 1; index <= nbrequipment; index++) { %>
                 <div class="form-group">
-                    <label for="nbr">Equipment <%= index %></label>
-                    <select name="nom-equipment" id="equipement-select">
-                        <option value="">--Please choose an Option--</option>
-                        <option value="c3725">c3725</option>
-                        <option value="2760">c2760</option>
-                    </select>
+                    <div class="card">
+                        <div class="card-header">
+                            <label for="nbr">Equipment <%= index %></label>
+                        </div>
+                        <div class="<%= index %>">
+                            <select name="nom-equipment" id="equipement-select-<%= index %>" onchange="AjoutLigne(<%= index %>)">
+                                <option value="">--Please choose an Option--</option>
+                                <optgroup label="Cisco">
+                                    <option value="c3725">c3725</option>
+                                    <option value="c2760">c2760</option>
+                                    <option value="c1941">c1941</option>
+                                    <option value="c1841">c1841</option>
+                                </optgroup>                                
+                            </select>
+                        </div>
+                    </div> 
                 </div>
             <% } %>
 
             <input type="submit" class="btn btn-primary" value="Valider">
         </form>
+    <% } %>
+    <% if (mode == 2) { %>
+        <p>voici la configuration</p>
     <% } %>
         
 
