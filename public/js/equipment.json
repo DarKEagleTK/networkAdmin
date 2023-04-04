@@ -1,18 +1,32 @@
 [
     {
         "Name": "c3725",
-        "slot": 0
+        "type": "switch",
+        "slot": 0,
+        "port": []
     },
     {
         "Name": "c2760",
-        "slot": 0
+        "type": "switch",
+        "slot": 0,
+        "port": []
     },
     {
         "Name": "c1941",
-        "slot": 3
+        "type": "router",
+        "slot": 3,
+        "port": ["gigabit", 2]
     },
     {
         "Name": "c1841",
-        "slot": 2
+        "type": "router",
+        "slot": 2,
+        "port": ["fastethernet", 2]
+    },
+    {
+        "Name": "SF 300-24",
+        "type": "router",
+        "slot": 0,
+        "port": ["fastethernet", 24, "gigabit", 4, "fibre", 2]
     }
 ]
