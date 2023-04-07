@@ -25,7 +25,7 @@
     },
     {
         "Name": "SF 300-24",
-        "type": "router",
+        "type": "switch",
         "slot": 0,
         "port": ["fastethernet", 24, "gigabit", 4, "fibre", 2]
     }
