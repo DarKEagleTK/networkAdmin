@@ -1,4 +1,4 @@
-function AjoutLigne(nbr) {
+function AjoutSlots(nbr) {
     //json
 
     $.getJSON('http://localhost:8080/js/equipment.json', (data) => {
@@ -27,12 +27,19 @@ function AjoutLigne(nbr) {
                 }
             }
             
+            if (document.getElementById("supprimable_br") !== null) {
+                document.getElementById("supprimable_br").remove();
+                document.getElementById("supprimable_label").remove();
+            }
+
             const br = document.createElement('br');
                 br.type = "br";
+                br.id = "supprimable_br";
             const label = document.createElement('label');
                 label.type = "label";
                 label.text = "Slots : ";
-                             
+                label.id = "supprimable_label";
+
             doc.appendChild(br);
             doc.appendChild(label);
 
@@ -47,12 +54,17 @@ function AjoutLigne(nbr) {
                     
                 const option = document.createElement('option');
                     option.type = 'option';
-                    option.value = 'test' + nbr + '-' + j;
-                    option.text = "test";
+                    option.value = 'slot' + nbr + '-0';
+                    option.text = "slot test 1";
 
+                const option2 = document.createElement('option');
+                    option2.type = 'option';
+                    option2.value = 'slot' + nbr + '-1';
+                    option2.text = "slot test 2";
                 //on applique les champs
                 doc.appendChild(select);
                 select.appendChild(option);
+                select.appendChild(option2);
             }
         }
     })

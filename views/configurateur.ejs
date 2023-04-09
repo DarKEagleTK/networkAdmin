@@ -27,7 +27,7 @@
                             <label for="nbr">Equipment <%= index %></label>
                         </div>
                         <div id="mat<%= index %>">
-                            <select name="nom-equipment" id="equipement-select-<%= index %>" onchange="AjoutLigne(<%= index %>)">
+                            <select name="nomequipment" id="equipement-select-<%= index %>" onchange="AjoutSlots(<%= index %>)">
                                 <option value="">--Please choose an Option--</option>
                                 <optgroup label="Cisco">
                                     <option value="c3725">c3725</option>
@@ -44,7 +44,15 @@
             <input type="submit" class="btn btn-primary" value="Valider">
         </form>
     <% } %>
+
     <% if (mode == 2) { %>
+        <form action="/configurateur/configfile" method="post">
+
+            <input type="submit" class="btn btn-primary" value="Valider">
+        </form>
+    <% } %>
+
+    <% if (mode == 3) { %>
         <p>voici la configuration</p>
     <% } %>
         
