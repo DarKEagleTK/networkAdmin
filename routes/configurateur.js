@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const request = require('request');
+
 
 router.get('/', (req, res) => {
     const mode = 0;
@@ -14,12 +16,18 @@ router.post('/nbr', (req, res, next) => {
 })
 
 router.post("/config", (req, res, next) => {
-    const mode = 2;
+    request('http://localhost:8080/js/equipment.json', (err, response, body) => {
+        var test = JSON.parse(body);
+        console.log(test);
+            const mode = 2;
     const nbrequipment = req.body.nomequipment.length;
     const NomEquipment = req.body.nomequipment;
-
-
+        
+        
     res.render('configurateur', {mode: mode, nbrequipment: nbrequipment, NomEquipment: NomEquipment})
+    })
+
+
 })
 
 router.post('/configfile', (req, res, next) => {

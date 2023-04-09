@@ -47,6 +47,16 @@
 
     <% if (mode == 2) { %>
         <form action="/configurateur/configfile" method="post">
+            <% for (let index = 1; index <= nbrequipment; index++) { %>
+                <div class="form-group">
+                    <div class="card">
+                        <div class="card-header">
+                            <label for="nbr">Equipment <%= index %> : <%= NomEquipment[index-1] %></label>
+                        </div>
+                    </div>
+                </div>
+            
+            <% } %>
 
             <input type="submit" class="btn btn-primary" value="Valider">
         </form>
